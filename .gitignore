@@ -122,3 +122,5 @@ build-all.sh
 build_g*
 build_n*
 clean
+/out
+/build

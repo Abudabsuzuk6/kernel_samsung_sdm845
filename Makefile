@@ -313,6 +313,7 @@ HOSTCFLAGS   := -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-
 				-Wno-deprecated-declarations
 HOSTCXXFLAGS = -O3
 HOSTCXXFLAGS = -O2
+HOSTLDFLAGS  += $(HOST_LFS_LDFLAGS)
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -359,6 +360,8 @@ OBJCOPY		= llvm-objcopy
 OBJDUMP		= llvm-objdump
 READELF		= llvm-readelf
 STRIP		= llvm-strip
+HOSTLDFLAGS	+= -fuse-ld=lld
+HOSTCFLAGS += -fuse-ld=lld
 else
 REAL_CC		= $(CROSS_COMPILE)gcc
 LD		= $(CROSS_COMPILE)ld

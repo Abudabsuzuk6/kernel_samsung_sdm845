@@ -1807,6 +1807,7 @@ else
         build-dir  = $(KBUILD_EXTMOD)$(if $(zap-slash),/$(zap-slash))
         target-dir = $(if $(KBUILD_EXTMOD),$(dir $<),$(dir $@))
 endif
+endif
 
 %.s: %.c prepare scripts FORCE
 	$(Q)$(MAKE) $(build)=$(build-dir) $(target-dir)$(notdir $@)
